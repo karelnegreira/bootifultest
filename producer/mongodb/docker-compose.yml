@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - /home/barry/mongodb/database:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped
